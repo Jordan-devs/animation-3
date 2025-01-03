@@ -61,6 +61,12 @@
         animation: 4s infinite alternate text-fill;
       }
 
+      svg text.dot {
+        fill: var(--loader-dot-color);
+        stroke: var(--loader-dot-color);
+        animation: 4s infinite alternate dot-fill;
+      }
+
       @keyframes text-fill {
         0% {
           fill: transparent;
@@ -85,6 +91,17 @@
           stroke-dasharray: 32% 0;
         }
       }
+
+      @keyframes dot-fill {
+        0%,
+        60% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -99,7 +116,7 @@
           y="50%"
           dy=".32em"
           dx="3em"
-          class="text-body"
+          class="text-body dot"
           text-anchor="middle"
         >
           .
